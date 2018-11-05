@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    .btn-block {
+        padding: 10% 0;
+    }
+    .responsive-width {
+        font-size: 2vw;
+    }
+</style>
+
+<div class="container">
+    <div class="page-header clearfix detailHeading">
+        <h2>Administrar:</h2>
+    </div>
+</div>
+
+<div class="container">
+    <div class="jumbotron row">
+        <div class="col-xs-6">
+            <center>
+                <a asp-controller="Clientes" asp-action="Index" type="button" class="btn btn-primary btn-block responsive-width">Clientes</a>
+            </center>
+        </div>
+        <div class="col-xs-6">
+            <center>
+                <a asp-controller="Taxistas" asp-action="Index" type="button" class="btn btn-primary btn-block responsive-width">Taxistas</a>
+            </center>
+        </div>
+    </div>
+</div>

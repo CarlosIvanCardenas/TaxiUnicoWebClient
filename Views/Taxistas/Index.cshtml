@@ -1,0 +1,46 @@
+@model TaxiUnicoWebClient.Models.Classes.Taxista
+@{
+    ViewData["Title"] = "Taxistas";
+}
+
+<div class="container">
+    <div class="page-header clearfix detailHeading">
+        <h2>Administrar Taxistas:</h2>
+    </div>
+</div>
+
+<div class="container">
+    <div class="jumbotron">
+        <div class="row">
+            <a asp-controller="Taxistas" asp-action="GetAll" type="button" class="btn btn-block btn-primary">Mostrar todos</a>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <div class="row">
+            <form asp-action="GetById" method="GET" class="form-group row">
+                <label for="inputId" class="col-sm-2 col-form-label">Buscar por id: </label>
+                <div class="col-sm-9">
+                    <input asp-for="Id" id="inputId" type="text" class="form-control" value="" placeholder="Ingrese id del cliente">
+                </div>
+                <div class="col-sm-1">
+                    <input type="submit" class="btn btn-sm btn-success" value="Buscar"/>
+                </div>
+            </form>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <div class="row">
+            <form asp-action="GetByEmail" method="GET" class="form-group row">
+                <label for="inputEmail" class="col-sm-2 col-form-label">Buscar por email: </label>
+                <div class="col-sm-9">
+                    <input asp-for="Correo" id="inputEmail" type="text" class="form-control" placeholder="Ingrese correo electronico">
+                </div>
+                <div class="col-sm-1">
+                    <input type="submit" class="btn btn-sm btn-success" value="Buscar"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
