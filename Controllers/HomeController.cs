@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -17,25 +17,6 @@ namespace TaxiUnicoWebClient.Controllers
         HttpClient client = new HttpClient(httpClientHandler){BaseAddress = new Uri("http://localhost:5000/")};
         public async Task<IActionResult> Index()
         {
-            Cliente cliente = null; //await GetClienteAsync("api/clientes/08d63c34-47d5-b8ce-d7d0-f04d9c0a197f");
-            var response = await client.GetAsync("/api/clientes/08d63c34-47d5-b8ce-d7d0-f04d9c0a197f");
-            cliente = await response.Content.ReadAsAsync<Cliente>();
-            Console.WriteLine($"AQUI: {cliente.PrimerNombre}");
-            
-            return View(cliente);
-        }
-
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
-
-        public IActionResult Contact()
-        {
-            ViewData["Message"] = "Your contact page.";
-
             return View();
         }
 
