@@ -34,6 +34,10 @@
                     <li><a asp-area="" asp-controller="Clientes" asp-action="Index">Clientes</a></li>
                     <li><a asp-area="" asp-controller="Taxistas" asp-action="Index">Taxistas</a></li>
                 </ul>
+                <form class="form-inline navbar-right">
+                    <input type="button" value="Opciones de Administrador" onclick="location.href='@Url.Action("Index", "Admins")'" class="btn btn-success" style="margin-top: 9px"/>
+                    <input type="button" value="Cerrar Sesión" onclick="location.href='@Url.Action("LogoutAsync", "Home")'" class="btn btn-danger" style="margin-top: 9px"/>
+                </form>
             </div>
         </div>
     </nav>

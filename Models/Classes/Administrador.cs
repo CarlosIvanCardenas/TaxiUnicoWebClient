@@ -12,7 +12,7 @@ namespace TaxiUnicoWebClient.Models.Classes
         [Required]
         public string Correo { get; set; }
 
-        [Required, DataType(DataType.Password)]
+        [Required]
         public string Contraseña { get; set; }
 
         [Required]

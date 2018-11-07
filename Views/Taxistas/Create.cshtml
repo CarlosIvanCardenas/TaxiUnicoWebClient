@@ -1,0 +1,67 @@
+@model TaxiUnicoWebClient.Models.Classes.Taxista
+@{
+    ViewData["Title"] = "CreateTaxista";
+}
+<div class="container">
+    <div class="page-header clearfix detailHeading">
+        <h2>Detalles:</h2>
+    </div>
+</div>
+
+<div class="container">
+    <div class="jumbotron">
+        <form method="post" autocomplete="off">
+            <div class="form-group row">
+                <label for="correo" class="col-sm-3 col-form-label">Correo:</label>
+                <div class="col-sm-9">
+                    <input asp-for="Correo" class="form-control" id="correo" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="contraseña" class="col-sm-3 col-form-label">Contraseña:</label>
+                <div class="col-sm-9">
+                    <input asp-for="Contraseña" class="form-control" id="contraseña" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="primerNombre" class="col-sm-3 col-form-label">Primer nombre:</label>
+                <div class="col-sm-9">
+                    <input asp-for="PrimerNombre" class="form-control" id="primerNombre" required autofocus>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="segundoNombre" class="col-sm-3 col-form-label">Segundo nombre:</label>
+                <div class="col-sm-9">
+                    <input asp-for="SegundoNombre" class="form-control" id="segundoNombre">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="apellidos" class="col-sm-3 col-form-label">Apellidos:</label>
+                <div class="col-sm-9">
+                    <input asp-for="Apellidos" class="form-control" id="apellidos" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="telefono" class="col-sm-3 col-form-label">Telefono:</label>
+                <div class="col-sm-9">
+                    <input asp-for="Telefono" class="form-control" id="telefono" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="direccion" class="col-sm-3 col-form-label">Dirección:</label>
+                <div class="col-sm-9">
+                    <input asp-for="Direccion" class="form-control" id="direccion" required>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-12">
+                    <center>
+                        <button type="submit" class="btn btn-primary">Registrar taxista</button>
+                    </center>
+                </div>
+            </div>
+        @Html.AntiForgeryToken()
+        </form>
+    </div>
+</div>

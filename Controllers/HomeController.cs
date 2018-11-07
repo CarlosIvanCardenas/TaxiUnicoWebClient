@@ -15,7 +15,8 @@ namespace TaxiUnicoWebClient.Controllers
     {
         public static HttpClientHandler httpClientHandler = new HttpClientHandler(){ServerCertificateCustomValidationCallback = (message, cert, chain, errors) => { return true; }};
         HttpClient client = new HttpClient(httpClientHandler){BaseAddress = new Uri("http://localhost:5000/")};
-        public async Task<IActionResult> Index()
+        
+        public IActionResult Index()
         {
             return View();
         }

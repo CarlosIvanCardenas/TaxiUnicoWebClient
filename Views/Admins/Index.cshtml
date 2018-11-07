@@ -1,24 +1,24 @@
-@model TaxiUnicoWebClient.Models.Classes.Taxista
+@model TaxiUnicoWebClient.Models.Classes.Administrador
 @{
-    ViewData["Title"] = "Taxistas";
+    ViewData["Title"] = "Admins";
 }
 
 <div class="container">
     <div class="page-header clearfix detailHeading">
-        <h2>Administrar Taxistas:</h2>
+        <h2>Opciones de administrador:</h2>
     </div>
 </div>
 
 <div class="container">
     <div class="jumbotron">
         <div class="row">
-            <a asp-controller="Taxistas" asp-action="GetAll" type="button" class="btn btn-block btn-primary">Mostrar todos</a>
+            <a asp-controller="Admins" asp-action="GetAll" type="button" class="btn btn-block btn-primary">Mostrar todos</a>
         </div>
         <br/>
         <br/>
         <br/>
         <div class="row">
-            <a asp-controller="Taxistas" asp-action="Create" type="button" class="btn btn-block btn-primary">Registrar nuevo</a>
+            <a asp-controller="Admins" asp-action="Create" type="button" class="btn btn-block btn-primary">Registrar nuevo</a>
         </div>
         <br/>
         <br/>

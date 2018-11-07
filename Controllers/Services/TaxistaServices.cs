@@ -9,7 +9,7 @@ namespace TaxiUnicoWebClient.Controllers.Services
     public class TaxistasServices
     {
         public static HttpClientHandler httpClientHandler = new HttpClientHandler(){ServerCertificateCustomValidationCallback = (message, cert, chain, errors) => { return true; }};
-        public static HttpClient client = new HttpClient(httpClientHandler){BaseAddress = new Uri("http://localhost:5000/")};
+        public static HttpClient client = new HttpClient(httpClientHandler){BaseAddress = new Uri("http://206.189.164.14:80/")};
         public async Task<Taxista> GetTaxistaByIdAsync(Guid id)
         {
             var response = await client.GetAsync($"/api/taxistas/{id}");

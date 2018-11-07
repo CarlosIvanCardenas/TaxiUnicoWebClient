@@ -76,5 +76,21 @@ namespace TaxiUnicoWebClient.Controllers
             var updated = await service.UpdateTaxistaAsync(taxista);
             return RedirectToAction("GetAll");
         }
+        
+        [HttpGet, ActionName("Create")]
+        public IActionResult CreateTaxista()
+        {
+            return View();
+        }
+        
+        [HttpPost, ActionName("Create")]
+        public async Task<IActionResult> CreateTaxistaAsync(Taxista taxista)
+        {
+            taxista.Id = Guid.NewGuid();
+            taxista.Estatus = "Activo";
+            var createdAt = await service.CreateTaxistaAsync(taxista);
+            Console.WriteLine($"URL: {createdAt}");
+            return Redirect(createdAt.ToString());
+        }
     }
 }
