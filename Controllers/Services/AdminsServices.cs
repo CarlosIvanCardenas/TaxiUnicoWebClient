@@ -25,6 +25,13 @@ namespace TaxiUnicoWebClient.Controllers.Services
             return admin;
         }
 
+        public async Task<Administrador> AdminLogin(string email, string password)
+        {
+            var response = await client.GetAsync($"/api/admins/login/{email}/{password}");
+            Administrador admin = await response.Content.ReadAsAsync<Administrador>();
+            return admin;
+        }
+
         public async Task<List<Administrador>> GetAllAdmins()
         {
             var response = await client.GetAsync("/api/admins");

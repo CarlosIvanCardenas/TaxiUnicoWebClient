@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -31,6 +32,12 @@ namespace TaxiUnicoWebClient
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            //Redireccionamiento en caso de no haber iniciado sesión o no estar autorizado
+            services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+                .AddCookie(o => {
+                    o.LoginPath = new PathString("/Home/Login");
+                    o.AccessDeniedPath = new PathString("/Home/");
+                });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddHttpClient();

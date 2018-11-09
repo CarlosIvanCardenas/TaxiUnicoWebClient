@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using TaxiUnicoWebClient.Models;
 using TaxiUnicoWebClient.Models.Classes;
 using TaxiUnicoWebClient.Controllers.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TaxiUnicoWebClient.Controllers
 {
@@ -16,21 +17,21 @@ namespace TaxiUnicoWebClient.Controllers
     {
         TaxistasServices service = new TaxistasServices();
 
-        [HttpGet]
+        [HttpGet, Authorize]
         public IActionResult Index()
         {
             Taxista taxista = new Taxista();
             return View(taxista);
         }
 
-        [HttpGet, ActionName("GetAll")]
+        [HttpGet, ActionName("GetAll"), Authorize]
         public async Task<IActionResult> GetAllTaxistasAsync()
         {
             var taxistas = await service.GetAllTaxistas();
             return View(taxistas);
         }
 
-        [HttpGet, ActionName("GetById")]
+        [HttpGet, ActionName("GetById"), Authorize]
         public async Task<IActionResult> GetTaxistaByIdAsync(Guid id)
         {
             var taxista = await service.GetTaxistaByIdAsync(id);
@@ -41,14 +42,14 @@ namespace TaxiUnicoWebClient.Controllers
             return View(taxista);
         }
 
-        [HttpPost, ActionName("GetById")]
+        [HttpPost, ActionName("GetById"), Authorize]
         public async Task<IActionResult> GetTaxistaByIdAsync(Taxista taxista)
         {
             var updated = await service.UpdateTaxistaAsync(taxista);
             return View(updated);
         }
 
-        [HttpGet, ActionName("GetByEmail")]
+        [HttpGet, ActionName("GetByEmail"), Authorize]
         public async Task<IActionResult> GetTaxistaByEmailAsync(string correo)
         {
             var taxista = await service.GetTaxistaByEmailAsync(correo);
@@ -59,7 +60,7 @@ namespace TaxiUnicoWebClient.Controllers
             return RedirectToAction("GetById", new {id = taxista.Id});
         }
 
-        [ActionName("Delete")]
+        [ActionName("Delete"), Authorize]
         public async Task<IActionResult> DeleteTaxistaAsync(Guid id)
         {
             var taxista = await service.GetTaxistaByIdAsync(id);
@@ -68,7 +69,7 @@ namespace TaxiUnicoWebClient.Controllers
             return RedirectToAction("GetAll");
         }
 
-        [ActionName("Activate")]
+        [ActionName("Activate"), Authorize]
         public async Task<IActionResult> ActivateTaxistaAsync(Guid id)
         {
             var taxista = await service.GetTaxistaByIdAsync(id);
@@ -77,13 +78,13 @@ namespace TaxiUnicoWebClient.Controllers
             return RedirectToAction("GetAll");
         }
         
-        [HttpGet, ActionName("Create")]
+        [HttpGet, ActionName("Create"), Authorize]
         public IActionResult CreateTaxista()
         {
             return View();
         }
         
-        [HttpPost, ActionName("Create")]
+        [HttpPost, ActionName("Create"), Authorize]
         public async Task<IActionResult> CreateTaxistaAsync(Taxista taxista)
         {
             taxista.Id = Guid.NewGuid();

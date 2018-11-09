@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using TaxiUnicoWebClient.Models;
 using TaxiUnicoWebClient.Models.Classes;
 using TaxiUnicoWebClient.Controllers.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TaxiUnicoWebClient.Controllers
 {
@@ -16,21 +17,21 @@ namespace TaxiUnicoWebClient.Controllers
     {
         ClientesServices service = new ClientesServices();
 
-        [HttpGet]
+        [HttpGet, Authorize]
         public IActionResult Index()
         {
             Cliente cliente = new Cliente();
             return View(cliente);
         }
 
-        [HttpGet, ActionName("GetAll")]
+        [HttpGet, ActionName("GetAll"), Authorize]
         public async Task<IActionResult> GetAllClientesAsync()
         {
             var clientes = await service.GetAllClientes();
             return View(clientes);
         }
 
-        [HttpGet, ActionName("GetById")]
+        [HttpGet, ActionName("GetById"), Authorize]
         public async Task<IActionResult> GetClienteByIdAsync(Guid id)
         {
             var cliente = await service.GetClienteByIdAsync(id);
@@ -41,14 +42,14 @@ namespace TaxiUnicoWebClient.Controllers
             return View(cliente);
         }
 
-        [HttpPost, ActionName("GetById")]
+        [HttpPost, ActionName("GetById"), Authorize]
         public async Task<IActionResult> GetClienteByIdAsync(Cliente cliente)
         {
             var updated = await service.UpdateClienteAsync(cliente);
             return View(updated);
         }
 
-        [HttpGet, ActionName("GetByEmail")]
+        [HttpGet, ActionName("GetByEmail"), Authorize]
         public async Task<IActionResult> GetClienteByEmailAsync(string correo)
         {
             var cliente = await service.GetClienteByEmailAsync(correo);
@@ -59,7 +60,7 @@ namespace TaxiUnicoWebClient.Controllers
             return RedirectToAction("GetById", new {id = cliente.Id});
         }
 
-        [ActionName("Delete")]
+        [ActionName("Delete"), Authorize]
         public async Task<IActionResult> DeleteClienteAsync(Guid id)
         {
             var cliente = await service.GetClienteByIdAsync(id);
@@ -68,7 +69,7 @@ namespace TaxiUnicoWebClient.Controllers
             return RedirectToAction("GetAll");
         }
 
-        [ActionName("Activate")]
+        [ActionName("Activate"), Authorize]
         public async Task<IActionResult> ActivateClienteAsync(Guid id)
         {
             var cliente = await service.GetClienteByIdAsync(id);

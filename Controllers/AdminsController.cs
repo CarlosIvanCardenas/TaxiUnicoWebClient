@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using TaxiUnicoWebClient.Models;
 using TaxiUnicoWebClient.Models.Classes;
 using TaxiUnicoWebClient.Controllers.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace TaxiUnicoWebClient.Controllers
 {
@@ -16,20 +17,20 @@ namespace TaxiUnicoWebClient.Controllers
     {
         AdminsServices service = new AdminsServices();
 
-        [HttpGet]
+        [HttpGet, Authorize]
         public IActionResult Index()
         {
             return View();
         }
 
-        [HttpGet, ActionName("GetAll")]
+        [HttpGet, ActionName("GetAll"), Authorize]
         public async Task<IActionResult> GetAllAdminsAsync()
         {
             var admins = await service.GetAllAdmins();
             return View(admins);
         }
 
-        [HttpGet, ActionName("GetById")]
+        [HttpGet, ActionName("GetById"), Authorize]
         public async Task<IActionResult> GetAdminByIdAsync(Guid id)
         {
             var admin = await service.GetAdminByIdAsync(id);
@@ -40,14 +41,14 @@ namespace TaxiUnicoWebClient.Controllers
             return View(admin);
         }
 
-        [HttpPost, ActionName("GetById")]
+        [HttpPost, ActionName("GetById"), Authorize]
         public async Task<IActionResult> GetAdminByIdAsync(Administrador admin)
         {
             var updated = await service.UpdateAdminAsync(admin);
             return View(updated);
         }
 
-        [HttpGet, ActionName("GetByEmail")]
+        [HttpGet, ActionName("GetByEmail"), Authorize]
         public async Task<IActionResult> GetAdminByEmailAsync(string correo)
         {
             var admin = await service.GetAdminByEmailAsync(correo);
@@ -58,13 +59,13 @@ namespace TaxiUnicoWebClient.Controllers
             return RedirectToAction("GetById", new {id = admin.Id});
         }
         
-        [HttpGet, ActionName("Create")]
+        [HttpGet, ActionName("Create"), Authorize]
         public IActionResult CreateAdmin()
         {
             return View();
         }
         
-        [HttpPost, ActionName("Create")]
+        [HttpPost, ActionName("Create"), Authorize]
         public async Task<IActionResult> CreateAdminAsync(Administrador admin)
         {
             admin.Id = Guid.NewGuid();
