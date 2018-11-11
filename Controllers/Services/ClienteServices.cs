@@ -50,5 +50,12 @@ namespace TaxiUnicoWebClient.Controllers.Services
             cliente = await response.Content.ReadAsAsync<Cliente>();
             return cliente;
         }
+
+        public async Task<List<Viaje>> GetViajesByCliente(Guid id)
+        {
+            var response = await client.GetAsync($"/api/viajes/cliente/{id}");
+            List<Viaje> viajes = await response.Content.ReadAsAsync<List<Viaje>>();
+            return viajes;
+        }
     }
 }

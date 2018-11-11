@@ -60,6 +60,9 @@ namespace TaxiUnicoWebClient
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
+            //LOG IN
+            app.UseAuthentication();
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

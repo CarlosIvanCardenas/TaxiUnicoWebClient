@@ -51,7 +51,7 @@ namespace TaxiUnicoWebClient.Controllers
                 var claims = new List<Claim>
                 {
                     //Otorgar permiso de autenticación
-                    new Claim(ClaimTypes.Name, loginModel.Correo)
+                    new Claim(ClaimTypes.Email, loginModel.Correo)
                 };
                 //Comprobar si el usuario es de tipo administrador
                 // if (usuario.Administrador)

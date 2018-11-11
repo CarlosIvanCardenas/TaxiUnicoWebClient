@@ -93,5 +93,12 @@ namespace TaxiUnicoWebClient.Controllers
             Console.WriteLine($"URL: {createdAt}");
             return Redirect(createdAt.ToString());
         }
+
+        [HttpGet, ActionName("Viajes"), Authorize]
+        public async Task<IActionResult> GetViajesByTaxista(Guid id)
+        {
+            var viajes = await service.GetViajesByTaxista(id);
+            return View(viajes);
+        }
     }
 }

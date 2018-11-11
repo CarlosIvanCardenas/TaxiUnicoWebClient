@@ -77,5 +77,12 @@ namespace TaxiUnicoWebClient.Controllers
             var updated = await service.UpdateClienteAsync(cliente);
             return RedirectToAction("GetAll");
         }
+
+        [HttpGet, ActionName("Viajes"), Authorize]
+        public async Task<IActionResult> GetViajesByCliente(Guid id)
+        {
+            var viajes = await service.GetViajesByCliente(id);
+            return View(viajes);
+        }
     }
 }

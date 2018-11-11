@@ -31,6 +31,13 @@ namespace TaxiUnicoWebClient.Controllers.Services
             return taxistas;
         }
 
+        public async Task<List<Viaje>> GetViajesByTaxista(Guid id)
+        {
+            var response = await client.GetAsync($"/api/viajes/taxista/{id}");
+            List<Viaje> viajes = await response.Content.ReadAsAsync<List<Viaje>>();
+            return viajes;
+        }
+
         public async Task<Uri> CreateTaxistaAsync(Taxista taxista)
         {
             var response = await client.PostAsJsonAsync("api/taxistas", taxista);

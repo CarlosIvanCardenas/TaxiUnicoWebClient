@@ -1,0 +1,45 @@
+@model List<TaxiUnicoWebClient.Models.Classes.Viaje>
+@{
+    ViewData["Title"] = "Viajes";
+}
+<div class="container">
+    <div class="page-header clearfix detailHeading">
+        <h2>@ViewData["Title"]</h2>
+    </div>
+</div>
+
+<div class="container">
+    <div class="jumbotron" style="overflow:auto;">
+        <h3>Viajes: </h3>
+        <br>
+        <table class="table table-responsive table-striped">
+            <thead>
+                <tr>
+                    <th>Origen</th>
+                    <th>Destino</th>
+                    <th>Kilometros</th>
+                    <th>Hora solicitud</th>
+                    <th>Hora partida</th>
+                    <th>Hora llegada</th>
+                    <th>Cliente</th>
+                    <th>Vehiculo</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var c in Model)
+                {
+                    <tr class="assetRow">
+                        <td>@c.Origen</td>
+                        <td>@c.Destino</td>
+                        <td>@c.Kilometros</td>
+                        <td>@c.HoraSolicitud</td>
+                        <td>@c.HoraPartida</td>
+                        <td>@c.HoraLlegada</td>
+                        <td>@c.Cliente.Correo</td>
+                        <td>@c.Vehiculo.Placa</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
