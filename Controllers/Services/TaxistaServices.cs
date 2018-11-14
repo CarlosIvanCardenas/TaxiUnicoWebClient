@@ -38,6 +38,13 @@ namespace TaxiUnicoWebClient.Controllers.Services
             return viajes;
         }
 
+        public async Task<List<Vehiculo>> GetVehiculosByTaxista(Guid id)
+        {
+            var response = await client.GetAsync($"/api/vehiculos/taxista/{id}");
+            List<Vehiculo> vehiculos = await response.Content.ReadAsAsync<List<Vehiculo>>();
+            return vehiculos;
+        }
+
         public async Task<Uri> CreateTaxistaAsync(Taxista taxista)
         {
             var response = await client.PostAsJsonAsync("api/taxistas", taxista);
@@ -55,6 +62,15 @@ namespace TaxiUnicoWebClient.Controllers.Services
             // Deserialize the updated product from the response body.
             taxista = await response.Content.ReadAsAsync<Taxista>();
             return taxista;
+        }
+
+        public async Task<Uri> CreateVehiculoAsync(Vehiculo vehiculo)
+        {
+            var response = await client.PostAsJsonAsync("api/vehiculos", vehiculo);
+            response.EnsureSuccessStatusCode();
+            // URI of the created resource.
+            var createdAt = response.Headers.Location;
+            return createdAt;
         }
     }
 }

@@ -1,0 +1,47 @@
+@model TaxiUnicoWebClient.Models.NewVehiculoModel
+@{
+    ViewData["Title"] = "Vehiculos";
+}
+<div class="container">
+    <div class="page-header clearfix detailHeading">
+        <h2>@ViewData["Title"]</h2>
+    </div>
+</div>
+
+<div class="container">
+    <div class="jumbotron" style="overflow:auto;">
+        <div class="col-sm-12">
+            <center>
+                <a asp-controller="Taxistas" asp-action="NewVehiculo" asp-route-id="@Model.TaxistaId" type="button" class="btn btn-block btn-warning">Registrar nuevo</a>
+            </center>
+        </div>
+        <br/>
+        <br/>
+        <br/>
+        <h3>Viajes: </h3>
+        <br>
+        <table class="table table-responsive table-striped">
+            <thead>
+                <tr>
+                    <th>Placa</th>
+                    <th>Marca</th>
+                    <th>Modelo</th>
+                    <th>Color</th>
+                    <th>Poliza Seguro</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var c in Model.Vehiculos)
+                {
+                    <tr class="assetRow">
+                        <td>@c.Placa</td>
+                        <td>@c.Marca</td>
+                        <td>@c.Modelo</td>
+                        <td>@c.Color</td>
+                        <td>@c.PolizaSeguro</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

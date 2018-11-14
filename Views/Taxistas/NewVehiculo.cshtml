@@ -1,0 +1,55 @@
+@model TaxiUnicoWebClient.Models.Classes.Vehiculo
+@{
+    ViewData["Title"] = "NewVehiculo";
+}
+<div class="container">
+    <div class="page-header clearfix detailHeading">
+        <h2>Detalles:</h2>
+    </div>
+</div>
+
+<div class="container">
+    <div class="jumbotron">
+        <form method="post" autocomplete="off">
+            <div class="form-group row">
+                <label for="placa" class="col-sm-3 col-form-label">Placa:</label>
+                <div class="col-sm-9">
+                    <input asp-for="Placa" class="form-control" id="placa" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="marca" class="col-sm-3 col-form-label">Marca:</label>
+                <div class="col-sm-9">
+                    <input asp-for="Marca" class="form-control" id="marca" required>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="modelo" class="col-sm-3 col-form-label">Modelo:</label>
+                <div class="col-sm-9">
+                    <input asp-for="Modelo" class="form-control" id="modelo" required autofocus>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="color" class="col-sm-3 col-form-label">Color:</label>
+                <div class="col-sm-9">
+                    <input asp-for="Color" class="form-control" id="color">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="polizaSeguro" class="col-sm-3 col-form-label">Poliza Seguro:</label>
+                <div class="col-sm-9">
+                    <input asp-for="PolizaSeguro" class="form-control" id="polizaSeguro" required>
+                </div>
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-sm-12">
+                    <center>
+                        <button type="submit" class="btn btn-primary">Registrar vehiculo</button>
+                    </center>
+                </div>
+            </div>
+        @Html.AntiForgeryToken()
+        </form>
+    </div>
+</div>

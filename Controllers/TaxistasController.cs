@@ -90,13 +90,10 @@ namespace TaxiUnicoWebClient.Controllers
         {
             taxista.Id = Guid.NewGuid();
             taxista.Estatus = "Activo";
-            //var user = await _userManager.GetUserAsync(HttpContext.User);
-            var AdminId = new Guid(User.FindFirst(ClaimTypes.NameIdentifier).Value);
-            Console.WriteLine($"ADMINISTRADOR ID: {AdminId}");
-            taxista.AdministradorId = AdminId;
+            taxista.Puntuacion = 5.0M;
+            taxista.AdministradorId = new Guid(HttpContext.User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier)?.Value);
             var createdAt = await service.CreateTaxistaAsync(taxista);
-            Console.WriteLine($"URL: {createdAt}");
-            return Redirect(createdAt.ToString());
+            return RedirectToAction("GetById", new {id = taxista.Id});
         }
 
         [HttpGet, ActionName("Viajes"), Authorize]
@@ -104,6 +101,35 @@ namespace TaxiUnicoWebClient.Controllers
         {
             var viajes = await service.GetViajesByTaxista(id);
             return View(viajes);
+        }
+
+        [HttpGet, ActionName("Vehiculos"), Authorize]
+        public async Task<IActionResult> GetVehiculosByTaxista(Guid id)
+        {
+            var vehiculos = await service.GetVehiculosByTaxista(id);
+            var model = new NewVehiculoModel()
+            {
+                Vehiculos = vehiculos,
+                TaxistaId = id
+            };
+            return View(model);
+        }
+
+        [HttpGet, ActionName("NewVehiculo"), Authorize]
+        public IActionResult NewVehiculo(Guid id)
+        {
+            var vehiculo = new Vehiculo();
+            vehiculo.Id = Guid.NewGuid();
+            vehiculo.TaxistaId = id;
+            
+            return View(vehiculo);
+        }
+
+        [HttpPost, ActionName("NewVehiculo"), Authorize]
+        public async Task<IActionResult> NewVehiculoAsync(Vehiculo vehiculo)
+        {
+            var createdAt = await service.CreateVehiculoAsync(vehiculo);
+            return RedirectToAction("Vehiculos", new {id = vehiculo.TaxistaId});
         }
     }
 }

@@ -22,6 +22,8 @@ namespace TaxiUnicoWebClient.Controllers
         [Authorize]
         public IActionResult Index()
         {
+            string userName = HttpContext.User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier)?.Value;
+            ViewData["username"] = userName;
             return View();
         }
 
@@ -40,10 +42,10 @@ namespace TaxiUnicoWebClient.Controllers
 
         [HttpPost, ActionName("Login")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> LoginPost(Administrador loginModel)
+        public async Task<IActionResult> LoginPost(Administrador admin)
         {
             //Guardar coincidencia de usuario en variable
-            var usuario = await LoginUserAsync(loginModel.Correo, loginModel.Contraseña);
+            var usuario = await LoginUserAsync(admin.Correo, admin.Contraseña);
             //Comprobar que el usuario exista
             if (usuario != null)
             {
@@ -51,8 +53,7 @@ namespace TaxiUnicoWebClient.Controllers
                 var claims = new List<Claim>
                 {
                     //Otorgar permiso de autenticación
-                    new Claim(ClaimTypes.Email, loginModel.Correo),
-                    //new Claim(ClaimTypes.NameIdentifier, loginModel.Id.ToString())
+                    new Claim(ClaimTypes.NameIdentifier, usuario.Id.ToString())
                 };
                 //Comprobar si el usuario es de tipo administrador
                 // if (usuario.Administrador)
