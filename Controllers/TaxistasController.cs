@@ -10,6 +10,7 @@ using TaxiUnicoWebClient.Models;
 using TaxiUnicoWebClient.Models.Classes;
 using TaxiUnicoWebClient.Controllers.Services;
 using Microsoft.AspNetCore.Authorization;
+using System.Security.Claims;
 
 namespace TaxiUnicoWebClient.Controllers
 {
@@ -89,6 +90,10 @@ namespace TaxiUnicoWebClient.Controllers
         {
             taxista.Id = Guid.NewGuid();
             taxista.Estatus = "Activo";
+            //var user = await _userManager.GetUserAsync(HttpContext.User);
+            var AdminId = new Guid(User.FindFirst(ClaimTypes.NameIdentifier).Value);
+            Console.WriteLine($"ADMINISTRADOR ID: {AdminId}");
+            taxista.AdministradorId = AdminId;
             var createdAt = await service.CreateTaxistaAsync(taxista);
             Console.WriteLine($"URL: {createdAt}");
             return Redirect(createdAt.ToString());

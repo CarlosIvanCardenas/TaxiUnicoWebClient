@@ -18,7 +18,7 @@ namespace TaxiUnicoWebClient.Controllers
     public class HomeController : Controller
     {
         AdminsServices service = new AdminsServices();
-        
+           
         [Authorize]
         public IActionResult Index()
         {
@@ -51,7 +51,8 @@ namespace TaxiUnicoWebClient.Controllers
                 var claims = new List<Claim>
                 {
                     //Otorgar permiso de autenticación
-                    new Claim(ClaimTypes.Email, loginModel.Correo)
+                    new Claim(ClaimTypes.Email, loginModel.Correo),
+                    //new Claim(ClaimTypes.NameIdentifier, loginModel.Id.ToString())
                 };
                 //Comprobar si el usuario es de tipo administrador
                 // if (usuario.Administrador)

@@ -1,0 +1,174 @@
+Using launch settings from /home/ec2-user/environment/TaxiUnicoWebClient/Properties/launchSettings.json...
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[0]
+      User profile is available. Using '/home/ec2-user/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+Hosting environment: Development
+Content root path: /home/ec2-user/environment/TaxiUnicoWebClient
+Now listening on: http://localhost:5050
+Application started. Press Ctrl+C to shut down.
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://13.58.81.5/  
+[40m[1m[33mwarn[39m[22m[49m: Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware[3]
+      Failed to determine the https port for redirect.
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Index", controller = "Home"}. Executing action TaxiUnicoWebClient.Controllers.HomeController.Index (TaxiUnicoWebClient)
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      Authorization was successful.
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method TaxiUnicoWebClient.Controllers.HomeController.Index (TaxiUnicoWebClient) - Validation state: Valid
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method TaxiUnicoWebClient.Controllers.HomeController.Index (TaxiUnicoWebClient), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.4361ms.
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Index.
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Index executed in 155.9734ms.
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action TaxiUnicoWebClient.Controllers.HomeController.Index (TaxiUnicoWebClient) in 186.7376ms
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 330.7014ms 200 text/html; charset=utf-8
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://13.58.81.5/Home/LogoutAsync  
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "LogoutAsync", controller = "Home"}. Executing action TaxiUnicoWebClient.Controllers.HomeController.LogoutAsync (TaxiUnicoWebClient)
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method TaxiUnicoWebClient.Controllers.HomeController.LogoutAsync (TaxiUnicoWebClient) - Validation state: Valid
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler[11]
+      AuthenticationScheme: Cookies signed out.
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method TaxiUnicoWebClient.Controllers.HomeController.LogoutAsync (TaxiUnicoWebClient), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 6.1978ms.
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.Infrastructure.RedirectResultExecutor[1]
+      Executing RedirectResult, redirecting to /Home/Login.
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action TaxiUnicoWebClient.Controllers.HomeController.LogoutAsync (TaxiUnicoWebClient) in 7.3201ms
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 21.0145ms 302 
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://13.58.81.5/Home/Login  
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Login", controller = "Home"}. Executing action TaxiUnicoWebClient.Controllers.HomeController.Login (TaxiUnicoWebClient)
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method TaxiUnicoWebClient.Controllers.HomeController.Login (TaxiUnicoWebClient) - Validation state: Valid
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method TaxiUnicoWebClient.Controllers.HomeController.Login (TaxiUnicoWebClient), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.1831ms.
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Login.
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Login executed in 30.812ms.
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action TaxiUnicoWebClient.Controllers.HomeController.Login (TaxiUnicoWebClient) in 31.6859ms
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 37.6216ms 200 text/html; charset=utf-8
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 POST http://13.58.81.5/Home/Login application/x-www-form-urlencoded 233
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Login", controller = "Home"}. Executing action TaxiUnicoWebClient.Controllers.HomeController.LoginPost (TaxiUnicoWebClient)
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method TaxiUnicoWebClient.Controllers.HomeController.LoginPost (TaxiUnicoWebClient) with arguments (TaxiUnicoWebClient.Models.Classes.Administrador) - Validation state: Invalid
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Authentication.Cookies.CookieAuthenticationHandler[10]
+      AuthenticationScheme: Cookies signed in.
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method TaxiUnicoWebClient.Controllers.HomeController.LoginPost (TaxiUnicoWebClient), returned result Microsoft.AspNetCore.Mvc.RedirectResult in 276.9319ms.
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.Infrastructure.RedirectResultExecutor[1]
+      Executing RedirectResult, redirecting to /.
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action TaxiUnicoWebClient.Controllers.HomeController.LoginPost (TaxiUnicoWebClient) in 330.7206ms
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 363.7934ms 302 
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://13.58.81.5/  
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Index", controller = "Home"}. Executing action TaxiUnicoWebClient.Controllers.HomeController.Index (TaxiUnicoWebClient)
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      Authorization was successful.
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method TaxiUnicoWebClient.Controllers.HomeController.Index (TaxiUnicoWebClient) - Validation state: Valid
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method TaxiUnicoWebClient.Controllers.HomeController.Index (TaxiUnicoWebClient), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.0087ms.
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Index.
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Index executed in 1.1452ms.
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action TaxiUnicoWebClient.Controllers.HomeController.Index (TaxiUnicoWebClient) in 1.6705ms
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 2.2607ms 200 text/html; charset=utf-8
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://13.58.81.5/Taxistas  
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Index", controller = "Taxistas"}. Executing action TaxiUnicoWebClient.Controllers.TaxistasController.Index (TaxiUnicoWebClient)
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      Authorization was successful.
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method TaxiUnicoWebClient.Controllers.TaxistasController.Index (TaxiUnicoWebClient) - Validation state: Valid
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method TaxiUnicoWebClient.Controllers.TaxistasController.Index (TaxiUnicoWebClient), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.2102ms.
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Index.
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Index executed in 31.8001ms.
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action TaxiUnicoWebClient.Controllers.TaxistasController.Index (TaxiUnicoWebClient) in 32.6191ms
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 34.1817ms 200 text/html; charset=utf-8
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 GET http://13.58.81.5/Taxistas/Create  
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Create", controller = "Taxistas"}. Executing action TaxiUnicoWebClient.Controllers.TaxistasController.CreateTaxista (TaxiUnicoWebClient)
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      Authorization was successful.
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method TaxiUnicoWebClient.Controllers.TaxistasController.CreateTaxista (TaxiUnicoWebClient) - Validation state: Valid
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action method TaxiUnicoWebClient.Controllers.TaxistasController.CreateTaxista (TaxiUnicoWebClient), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.1398ms.
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[1]
+      Executing ViewResult, running view Create.
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor[4]
+      Executed ViewResult - view Create executed in 22.8207ms.
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action TaxiUnicoWebClient.Controllers.TaxistasController.CreateTaxista (TaxiUnicoWebClient) in 23.6754ms
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 25.961ms 200 text/html; charset=utf-8
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Internal.WebHost[1]
+      Request starting HTTP/1.1 POST http://13.58.81.5/Taxistas/Create application/x-www-form-urlencoded 387
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Route matched with {action = "Create", controller = "Taxistas"}. Executing action TaxiUnicoWebClient.Controllers.TaxistasController.CreateTaxistaAsync (TaxiUnicoWebClient)
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Authorization.DefaultAuthorizationService[1]
+      Authorization was successful.
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[1]
+      Executing action method TaxiUnicoWebClient.Controllers.TaxistasController.CreateTaxistaAsync (TaxiUnicoWebClient) with arguments (TaxiUnicoWebClient.Models.Classes.Taxista) - Validation state: Valid
+ADMINISTRADOR ID: 00000000-0000-0000-0000-000000000000
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker[2]
+      Executed action TaxiUnicoWebClient.Controllers.TaxistasController.CreateTaxistaAsync (TaxiUnicoWebClient) in 312.076ms
+[41m[30mfail[39m[22m[49m: Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware[1]
+      An unhandled exception has occurred while executing the request.
+System.Net.Http.HttpRequestException: Response status code does not indicate success: 500 (Internal Server Error).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at TaxiUnicoWebClient.Controllers.Services.TaxistasServices.CreateTaxistaAsync(Taxista taxista) in /home/ec2-user/environment/TaxiUnicoWebClient/Controllers/Services/TaxistaServices.cs:line 44
+   at TaxiUnicoWebClient.Controllers.TaxistasController.CreateTaxistaAsync(Taxista taxista) in /home/ec2-user/environment/TaxiUnicoWebClient/Controllers/TaxistasController.cs:line 97
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at System.Threading.Tasks.ValueTask`1.get_Result()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.Hosting.Internal.WebHost[2]
+      Request finished in 360.7922ms 500 text/html; charset=utf-8
+Application is shutting down...
+obj/Debug/netcoreapp2.1/Razor/Views/Home/Index.g.cshtml.cs(136,28): error CS0246: The type or namespace name 'ApplicationUser' could not be found (are you missing a using directive or an assembly reference?) [/home/ec2-user/environment/TaxiUnicoWebClient/TaxiUnicoWebClient.csproj]
+Using launch settings from /home/ec2-user/environment/TaxiUnicoWebClient/Properties/launchSettings.json...
+[40m[32minfo[39m[22m[49m: Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager[0]
+      User profile is available. Using '/home/ec2-user/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+Hosting environment: Development
+Content root path: /home/ec2-user/environment/TaxiUnicoWebClient
+Now listening on: http://localhost:5050
+Application started. Press Ctrl+C to shut down.
+Application is shutting down...
